@@ -1,0 +1,19 @@
+index:
+    path:       /
+    defaults:   { _controller: JobListBundle:Index:index }
+
+show_job:
+    path:       /show/{slug}
+    defaults:   { _controller: JobListBundle:Index:show }
+
+add_job:
+    path:        /new/job
+    defaults:   { _controller: JobListBundle:Index:add }
+
+update_job:
+    path:        /update/{id}
+    defaults:   { _controller: JobListBundle:Index:update }
+
+delete_job:
+    path:        /delete/{id}
+    defaults:   { _controller: JobListBundle:Index:delete }

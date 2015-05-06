@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h2><a href="{{ path('index') }}">Main</a></h2>
+
+    {% for job in job %}
+        <p><h2>{{ job.title }}</h2></p>
+        <p>{{ job.description }}</p>
+        <p>{{ job.created|date("m/d/Y H:i:s") }}</p>
+    {% endfor %}
+{% endblock %}

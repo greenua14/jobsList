@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h3><a href="{{ path('add_job') }}">Add job</a></h3>
+
+    {% for job in jobs %}
+        <div>
+            <div style="float: left; width: 50%">
+                <a href="{{ path('show_job', { 'slug': job.slug }) }}">{{ job.title }}</a>
+            </div>
+            <div style="float: left; width: 25%">
+                <button id="apply_{{ job.id }}">APPLY NOU</button>
+            </div>
+            <div>
+                <a href="{{ path('update_job', { 'id': job.id }) }}">Update job</a>
+                <a href="{{ path('delete_job', { 'id': job.id }) }}">Delete job</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
